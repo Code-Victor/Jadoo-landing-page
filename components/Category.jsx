@@ -1,5 +1,4 @@
 import React from "react";
-import { content } from "../tailwind.config";
 
 const cards = [
   {
