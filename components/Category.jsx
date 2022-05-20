@@ -34,8 +34,8 @@ const cards = [
 const Category = () => {
   return (
     <div className="grid px-8 md:px-4 container grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 mx-auto mb-20">
-      {cards.map((card) => {
-        return <CategoryCards {...card} />;
+      {cards.map((card,index) => {
+        return <CategoryCards {...card} key={index} />;
       })}
     </div>
   );

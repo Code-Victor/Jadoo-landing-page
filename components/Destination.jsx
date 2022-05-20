@@ -25,7 +25,7 @@ const Destination = () => {
   return (
     <div className="flex flex-wrap  gap-y-4 justify-around w-full container mx-auto mt-8 mb-20 overflow-x-clip px-4">
       {cards.map((card,index) => {
-        return <DestinationCard {...card} slinky={index===cards.length-1}/>;
+        return <DestinationCard {...card} slinky={index===cards.length-1} key={index}/>;
       })}
     </div>
   );

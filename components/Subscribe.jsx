@@ -32,7 +32,7 @@ function Subscribe() {
               <path
                 d="M4 6L9.4 10.05C9.75556 10.3167 10.2444 10.3167 10.6 10.05L16 6"
                 stroke="#39425D"
-                stroke-linecap="round"
+                strokeLinecap="round"
               />
               <rect
                 x="0.5"

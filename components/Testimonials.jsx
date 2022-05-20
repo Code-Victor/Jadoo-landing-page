@@ -116,8 +116,8 @@ function TestimonyCard({ index, increased }) {
       <div className="w-[85%] -mb-24 md:h-full" key={index}>
         <motion.div
           className="filter rounded-[10px] bg-white px-3 md:px-8 w-full  max-w-[600px] pb-2 md:pb-9 border  z-10 relative "
-          initial={{ x: 50, y: 80 }}
-          animate={{ x: 0, y: 0 }}
+          initial={{ x: 50, y: 80,zIndex:1 }}
+          animate={{ x: 0, y: 0 ,zIndex:10}}
           exit={{ x: -226, opacity: 0 }}
         >
           <Avatar
@@ -131,8 +131,9 @@ function TestimonyCard({ index, increased }) {
           </div>
         </motion.div>
         <motion.div
-          className=" rounded-[10px] bg-white px-3 md:px-8 w-full max-w-[600px] pb-2 md:pb-9 border border-gray-600 "
-          initial={{ x: 50, y: -146 }}
+          className=" rounded-[10px] bg-white px-3 md:px-8 w-full max-w-[600px] pb-2 md:pb-9 border border-gray-600 relative lead"
+          initial={{ x: 0, y: -200,zIndex:10 }}
+          animate={{ x: 50, y: -146,zIndex:1 }}
         >
           <Avatar
             img={Testimonies[getNextNo(index)].img}
@@ -156,9 +157,9 @@ function TestimonyCard({ index, increased }) {
   return (
     <div className="w-[85%] -mb-24"key={index}>
       <motion.div
-        className="filter rounded-[10px] bg-white px-3 md:px-8 max-w-[600px] pb-2 md:pb-9 border  z-10 relative "
-        initial={{ x: 10, y: 10 }}
-        animate={{ x: 0, y: 0 }}
+        className="filter rounded-[10px] bg-white px-3 md:px-8 max-w-[600px] pb-2 md:pb-9 border  z-10 relative lead "
+        initial={{ x: 10, y: 10,zIndex:0 }}
+        animate={{ x: 0, y: 0 ,zIndex:10}}
       >
         <Avatar
           img={Testimonies[index].img}
@@ -171,9 +172,10 @@ function TestimonyCard({ index, increased }) {
         </div>
       </motion.div>
       <motion.div
-        className=" rounded-[10px] bg-white px-3 md:px-8 max-w-[600px] pb-2 md:pb-9 border border-gray-600 "
-        animate={{ x: 50, y: -146 }}
-        initial={{ x: 0, y: -226 }}
+        className=" rounded-[10px] bg-white px-3 md:px-8 max-w-[600px] pb-2 md:pb-9 border border-gray-600 relative trail"
+        initial={{ x: 0, y: -226 ,zIndex:10}}
+        animate={{ x: 50, y: -146,zIndex:0 }}
+        
       >
         <Avatar
           img={Testimonies[getNextNo(index)].img}
@@ -212,6 +214,7 @@ function Loader({ index ,className=''}) {
         return (
           <motion.div
             className={"bg-gray-300 h-4 w-4 rounded-full"}
+            key={i}
             layout
           ></motion.div>
         );

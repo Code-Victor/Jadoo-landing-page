@@ -57,8 +57,8 @@ export default function Home() {
           headText="Book your next trip in 3 easy steps"
           textAlign="left"
         >
-          {steps.map((step) => {
-            return <TripStep {...step} />;
+          {steps.map((step,index) => {
+            return <TripStep {...step} key={index} />;
           })}
         </Section>
         <div className="grid place-items-center ">

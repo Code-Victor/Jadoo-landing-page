@@ -26,14 +26,14 @@ function Footer() {
         </p>
       </div>
       <div className="md:col-span-5 md:row-span-2 lg:col-span-4 flex flex-col md:flex-row items-center justify-around mb-2">
-        {FooterLinks.map((link) => {
+        {FooterLinks.map((link,i) => {
           return (
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left" key={i}>
               <h1 className="font-bold">{link.head}</h1>
               <div className="flex flex-col gap-2 mt-4">
-                {link.links.map((link) => {
+                {link.links.map((link,index) => {
                   return (
-                    <a href="#" className="font-light ">
+                    <a href="#" className="font-light " key={index}>
                       {link}
                     </a>
                   );
@@ -83,7 +83,7 @@ function PlayStore({ className = "" }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clip-path="url(#clip0_1_521)">
+      <g clipPath="url(#clip0_1_521)">
         <path
           d="M11.5073 10.0018L1.46381 19.673C0.993483 19.3516 0.714243 18.817 0.719181 18.2473V1.75626C0.714243 1.18663 0.993483 0.65199 1.46381 0.330566L11.5073 10.0018Z"
           fill="#2196F3"
@@ -132,13 +132,13 @@ function AppleStore({className = ""}) {
 }
 function StoreBtn({ Icon, headText, footText, play = true }) {
   return (
-    <div className="rounded-3xl bg-black text-white flex py-1.5 px-3 items-center gap-1">
+    <div className="rounded-3xl bg-black text-white flex py-1 px-3 items-center gap-0.5">
       {Icon}
       <div className="flex flex-col">
-        <h3 className={`${play ? "uppercase text-bold text-sm" : "text-xs font-bold"}`}>
+        <h3 className={`${play ? "uppercase text-bold text-xs" : "text-xs font-bold"}`}>
           {headText}
         </h3>
-        <h2 className={`${play ? "font-light text-base" : "font-bold text-base"}`}>
+        <h2 className={`${play ? "font-light text-xs" : "font-bold text-xs"}`}>
           {footText}
         </h2>
       </div>

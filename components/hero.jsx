@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./navbar";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -12,8 +13,8 @@ const Hero = () => {
         alt=""
       />
       <NavBar />
-      <div className="container mx-auto grid md:grid-cols-2 items-center px-4 mt-4">
-        <div className=" ">
+      <div className="container mx-auto grid md:grid-cols-2 items-center px-4 mt-4" >
+        <motion.div className=" " initial={{x:-100,opacity:0}} transition={{duration: 1 }} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
           <h3 className="text-orange-900 text-sm md:text-base uppercase font-bold mb-1 md:mb-4 lg:mb-6">
             best destinations around the world
           </h3>
@@ -31,11 +32,11 @@ const Hero = () => {
             west hard for the.
           </p>
           <div className="flex gap-4 items-center">
-            <button className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-4 px-6 rounded-lg">
+            <motion.button whileTap={{scale:0.9}}  className="bg-orange-500 hover:bg-orange-400 text-white font-bold py-4 px-6 rounded-lg">
               Find out more
-            </button>
+            </motion.button>
             <div className="flex items-center gap-3">
-              <button className="px-4 py-4 bg-orange-900 rounded-full ">
+              <motion.button whileTap={{scale:0.9}} className="px-4 py-4 bg-orange-900 rounded-full ">
                 <svg
                   width="12"
                   height="13"
@@ -48,19 +49,19 @@ const Hero = () => {
                     fill="white"
                   />
                 </svg>
-              </button>
+              </motion.button>
               Play Demo
             </div>
           </div>
-        </div>
-        <div className="h-full w-[80%] mx-auto md:w-full md:h-auto lg:w-full">
+        </motion.div>
+        <motion.div initial={{x:100,opacity:0}} transition={{delay:1, duration: 1 }} whileInView={{opacity:1,x:0}}  className="h-full w-[80%] mx-auto md:w-full md:h-auto lg:w-full">
           <Image
             src="/images/Traveller 1.png"
             height={764}
             width={765}
             alt=""
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
