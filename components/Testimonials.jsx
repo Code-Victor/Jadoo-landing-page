@@ -42,7 +42,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState(0);
   const [increased, setIncreased] = useState(false);
   const TestimonyCards = Testimonies.map((test, i) => {
-    return <TestimonyCard index={i} increased={increased} />;
+    return <TestimonyCard index={i} increased={increased} key={i} />;
   });
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 mx-auto container px-4 mt-8">
@@ -124,7 +124,7 @@ function TestimonyCard({ index, increased }) {
             img={Testimonies[index].img}
             className="-ml-14 -mt-6 w-14 h-14"
           />
-          <p className="font-medium mb-9">"{Testimonies[index].testimony}"</p>
+          <p className="font-medium mb-9">&quot;{Testimonies[index].testimony}&quot;</p>
           <div>
             <h1 className="font-bold mb-1">{Testimonies[index].name}</h1>
             <p className="font-medium text-sm">{Testimonies[index].city}</p>
@@ -140,7 +140,7 @@ function TestimonyCard({ index, increased }) {
             className="-ml-14 -mt-6 w-14 h-14"
           />
           <p className="font-medium mb-9">
-            `"${Testimonies[getNextNo(index)].testimony}"`
+          &quot;{Testimonies[getNextNo(index)].testimony}&quot;
           </p>
           <div>
             <h1 className="font-bold mb-1">
@@ -165,7 +165,7 @@ function TestimonyCard({ index, increased }) {
           img={Testimonies[index].img}
           className="-ml-14 -mt-6 w-14 h-14"
         />
-        <p className="font-medium mb-9">"{Testimonies[index].testimony}"</p>
+        <p className="font-medium mb-9">&quot;{Testimonies[index].testimony}&quot;</p>
         <div>
           <h1 className="font-bold mb-1">{Testimonies[index].name}</h1>
           <p className="font-medium text-sm">{Testimonies[index].city}</p>
@@ -182,7 +182,7 @@ function TestimonyCard({ index, increased }) {
           className="-ml-14 -mt-6 w-14 h-14"
         />
         <p className="font-medium mb-9">
-          `"${Testimonies[getNextNo(index)].testimony}"`
+        &quot;{Testimonies[getNextNo(index)].testimony}&quot;
         </p>
         <div>
           <h1 className="font-bold mb-1">
